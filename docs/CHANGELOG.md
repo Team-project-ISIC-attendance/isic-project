@@ -1,9 +1,9 @@
 # Zápisnice tímu – ISIC Attendance System
 
-### Miesto stretnutí: miestnosť A514
-### Termín stretnutí: pondelok 17:00 (týždenne)
-### Vedúci projektu: [Ing. Ondrej Gallo, PhD.](https://uim.fei.stuba.sk/pracovnici/ondrej-gallo/)
-### Členovia tímu: Andrian‑Maksym Balaichuk, Danylo Zahorulko, Vladyslav Panik, Vitalii Romaniuk, Yurii Soma  
+**Miesto stretnutí:** miestnosť A514  
+**Termín stretnutí:** pondelok 17:00 (týždenne)  
+**Členovia tímu:** Andrian‑Maksym Balaichuk, Danylo Zahorulko, Vladyslav Panik, Vitalii Romaniuk, Yurii Soma  
+**Vedúci projektu:** [Ing. Ondrej Gallo, PhD.](https://uim.fei.stuba.sk/pracovnici/ondrej-gallo/)
 
 ---
 
