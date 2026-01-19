@@ -51,7 +51,7 @@
                     <div class="team-member">
                         <img src="media/balaichuk.jpeg" alt="Andrian-Maksym Balaichuk" class="member-photo">
                         <div class="member-name">Andrian-Maksym Balaichuk</div>
-                        <div class="member-role">Hardware & Embedded Systems</div>
+                        <div class="member-role">Embedded Hardware & Software Engineer</div>
                         <div class="member-description">
                             Zodpovedný za návrh a implementáciu hardvéru. Špecializuje sa na zapojenie PN532 a ESP12-F,
                             výber komponentov a testovanie hardvérových riešení. Koordinuje objednávky a montáž zariadenia.
@@ -81,7 +81,7 @@
                     <div class="team-member">
                         <img src="media/romaniuk.jpeg" alt="Vitalii Romaniuk" class="member-photo">
                         <div class="member-name">Vitalii Romaniuk</div>
-                        <div class="member-role">Embedded Software & Libraries</div>
+                        <div class="member-role">Embedded Software Developer</div>
                         <div class="member-description">
                             Špecialista na knižnice a SDK pre PN532 a ESP platformy. Analyzuje a testuje
                             dostupné riešenia, vyhodnocuje ich vhodnosť a implementuje komunikačné protokoly.
@@ -188,17 +188,18 @@
         <div id="milestones" class="tab-content">
             <section>
                 <h2>Projektové míľniky</h2>
-                
+
                 <div class="timeline">
                     <div class="milestone">
                         <div class="milestone-marker"></div>
                         <div class="milestone-number">1</div>
                         <div class="milestone-content">
-                            <div class="milestone-title">Výber témy a podanie ponuky</div>
-                            <div class="milestone-date">September 2025</div>
+                            <div class="milestone-title">Formovanie tímu a výber témy</div>
+                            <div class="milestone-date">Týždeň 1-2 (September 2025)</div>
                             <div class="milestone-description">
-                                Tím sa stretol a jednomyseľne zvolil tému ISIC Attendance System.
-                                Rozdelili sme si role, pripravili dokumentáciu a úspešne podali ponuku projektu.
+                                Tím sa stretol po prvýkrát, prediskutoval možné témy a jednomyseľne zvolil
+                                ISIC Attendance System. Rozdelili sme si role, definovali stakeholderov
+                                a vytvorili prvotný Product Backlog s hlavnými User Stories.
                             </div>
                             <span class="milestone-status status-completed">✓ Dokončené</span>
                         </div>
@@ -208,12 +209,12 @@
                         <div class="milestone-marker"></div>
                         <div class="milestone-number">2</div>
                         <div class="milestone-content">
-                            <div class="milestone-title">Výskum komponentov a technológií</div>
-                            <div class="milestone-date">September - Október 2025</div>
+                            <div class="milestone-title">Technický výskum a analýza</div>
+                            <div class="milestone-date">Týždeň 3-4 (Október 2025)</div>
                             <div class="milestone-description">
-                                Realizovali sme komplexný výskum hardvérových komponentov (PN532, ESP12-F),
-                                software frameworkov (React, FastAPI) a komunikačných protokolov.
-                                Vytvorili sme elektronické schémy a API kontrakty.
+                                Komplexný výskum NFC modulov (PN532), embedded platforiem (ESP12-F),
+                                backend technológií (FastAPI + PostgreSQL) a frontend frameworkov (React + TypeScript).
+                                Vytvorené elektronické schémy, dátový model, UX toky a API kontrakty.
                             </div>
                             <span class="milestone-status status-completed">✓ Dokončené</span>
                         </div>
@@ -224,11 +225,11 @@
                         <div class="milestone-number">3</div>
                         <div class="milestone-content">
                             <div class="milestone-title">Objednávka a montáž hardvéru</div>
-                            <div class="milestone-date">Október 2025</div>
+                            <div class="milestone-date">Týždeň 5-6 (Október 2025)</div>
                             <div class="milestone-description">
-                                Objednali sme všetky potrebné komponenty (ESP12-F, PN532, káble, USB-TTL adapter).
-                                Po dodaní sme sa stretli s vedúcim projektu a spojili komponenty podľa našej schémy.
-                                Vykonali sme prvotné testy funkčnosti.
+                                Finalizovaný Bill of Materials a objednané komponenty: ESP12-F, PN532 NFC modul,
+                                USB-TTL adaptér a príslušenstvo. Po doručení vykonaná montáž podľa schémy
+                                a prvotné testy napájania. Pripravené vývojové prostredia pre všetky vrstvy.
                             </div>
                             <span class="milestone-status status-completed">✓ Dokončené</span>
                         </div>
@@ -238,14 +239,106 @@
                         <div class="milestone-marker"></div>
                         <div class="milestone-number">4</div>
                         <div class="milestone-content">
-                            <div class="milestone-title">Aktualizácia webovej stránky</div>
-                            <div class="milestone-date">November 2025</div>
+                            <div class="milestone-title">Prvé čítanie ISIC kariet</div>
+                            <div class="milestone-date">Týždeň 7-8 (November 2025)</div>
                             <div class="milestone-description">
-                                Redesign webovej stránky projektu s novými sekciami (tím, zdroje, míľniky).
-                                Implementácia moderného dark theme dizajnu s tab navigáciou a responzívnym layoutom.
-                                Pridanie changelog, tímových fotografií a možnosti sťahovania dokumentov.
+                                Dosiahnuté prvé úspešné čítanie ISIC kariet - UID sa číta správne cez MIFARE protokol.
+                                Prechod z RTOS na signal/slot architektúru s task schedulerom pre lepší výkon.
+                                Implementované základné API endpointy a frontend routing.
+                            </div>
+                            <span class="milestone-status status-completed">✓ Dokončené</span>
+                        </div>
+                    </div>
+
+                    <div class="milestone">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-number">5</div>
+                        <div class="milestone-content">
+                            <div class="milestone-title">MQTT komunikácia HW → Backend</div>
+                            <div class="milestone-date">Týždeň 9-10 (November 2025)</div>
+                            <div class="milestone-description">
+                                Úspešná implementácia MQTT klienta na ESP s task schedulerom. Backend prijíma
+                                správy cez MQTT broker a ukladá dochádzku do databázy. Dokončené CRUD operácie,
+                                registračný formulár a high-fidelity wireframes.
+                            </div>
+                            <span class="milestone-status status-completed">✓ Dokončené</span>
+                        </div>
+                    </div>
+
+                    <div class="milestone">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-number">6</div>
+                        <div class="milestone-content">
+                            <div class="milestone-title">Integrácia a stabilizácia</div>
+                            <div class="milestone-date">Týždeň 11-12 (December 2025 - Január 2026)</div>
+                            <div class="milestone-description">
+                                Implementovaná API autentifikácia a základná FE + BE integrácia.
+                                Počas vianočnej pauzy vykonaný research OTA aktualizácií a bug fixes.
+                                Riešenie problémov so stabilitou napájania hardvéru.
+                            </div>
+                            <span class="milestone-status status-completed">✓ Dokončené</span>
+                        </div>
+                    </div>
+
+                    <div class="milestone">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-number">7</div>
+                        <div class="milestone-content">
+                            <div class="milestone-title">Prvý funkčný prototyp</div>
+                            <div class="milestone-date">Týždeň 13 (Január 2026)</div>
+                            <div class="milestone-description">
+                                Dokončený prvý funkčný prototyp systému. Hardvér číta ISIC karty,
+                                backend spracováva dochádzku, frontend zobrazuje dáta. Prototyp pripravený
+                                na testovanie a iterácie na základe spätnej väzby.
+                            </div>
+                            <span class="milestone-status status-completed">✓ Dokončené</span>
+                        </div>
+                    </div>
+
+                    <div class="milestone">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-number">8</div>
+                        <div class="milestone-content">
+                            <div class="milestone-title">PDF dokumentácia projektu</div>
+                            <div class="milestone-date">Do 20. januára 2026</div>
+                            <div class="milestone-description">
+                                Príprava a odovzdanie kompletnej PDF dokumentácie projektu.
+                                Súhrn technických rozhodnutí, architektúry systému, použitých technológií
+                                a výsledkov testovania prvého prototypu.
+                            </div>
+                            <span class="milestone-status status-completed">✓ Dokončené</span>
+                        </div>
+                    </div>
+
+                    <div class="milestone">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-number">9</div>
+                        <div class="milestone-content">
+                            <div class="milestone-title">Testovanie a metriky</div>
+                            <div class="milestone-date">Do konca januára 2026</div>
+                            <div class="milestone-description">
+                                Komplexné testovanie existujúceho systému. Zber metrík výkonu:
+                                latencia čítania kariet, spoľahlivosť MQTT komunikácie, odozva API.
+                                Identifikácia slabých miest pre optimalizáciu.
                             </div>
                             <span class="milestone-status status-in-progress">⟳ Prebieha</span>
+                        </div>
+                    </div>
+
+                    <div class="milestone">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-number">10</div>
+                        <div class="milestone-content">
+                            <div class="milestone-title">Optimalizácia hardvéru a vylepšenie dizajnu a UX</div>
+                            <div class="milestone-date">Február - Marec 2026</div>
+                            <div class="milestone-description">
+                                Optimalizácia spotreby energie hardvéru pre dlhšiu výdrž batérie.
+                                Implementácia sleep režimov, efektívnejšie power management
+                                a testovanie rôznych napájacích scenárov. Prepracovanie používateľského 
+                                rozhrania na základe spätnej väzby. Zlepšenie UX tokov, vizuálny redesign,
+                                optimalizácia pre mobilné zariadenia a implementácia accessibility štandardov.
+                            </div>
+                            <span class="milestone-status status-planned">○ Plánované</span>
                         </div>
                     </div>
                 </div>
