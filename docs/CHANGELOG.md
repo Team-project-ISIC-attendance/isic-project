@@ -3,7 +3,7 @@
 **Miesto stretnutí:** miestnosť A514  
 **Termín stretnutí:** pondelok 17:00 (týždenne)  
 **Členovia tímu:** Andrian‑Maksym Balaichuk, Danylo Zahorulko, Vladyslav Panik, Vitalii Romaniuk, Yurii Soma  
-**Vedúci projektu:** [Ing. Ondrej Gallo, PhD.](https://uim.fei.stuba.sk/pracovnici/ondrej-gallo/)
+**Vedúci projektu:** [Ing. Ondrej Gallo, PhD.](https://uim.fei.stuba.sk/pracovnici/ondrej-gallo/), [RNDr. Martin Nehéz, PhD.](https://uim.fei.stuba.sk/pracovnici/nehez/)
 
 ---
 
