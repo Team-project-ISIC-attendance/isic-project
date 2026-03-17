@@ -10,7 +10,7 @@ ISIC Project is a student identification and attendance tracking system with fou
 - **Hardware** (`hardware/`): ESP8266/ESP32 firmware (C++17, PlatformIO) with PN532 NFC reader
 - **Documentation** (`documentation/`): Thesis LaTeX source
 
-Each component is a git submodule. Task specs live in `docs/`.
+Each component is a git submodule. Task specs live in `.ralph/specs/`.
 
 The flow: Hardware scans ISIC cards via NFC → publishes JSON to MQTT topic `isic/scan` → Backend receives, auto-creates ISIC records, stores scans → Frontend displays data via REST API.
 
@@ -91,7 +91,7 @@ Event-driven architecture built on a custom Signal/Slot EventBus:
 
 ## Execution Workflow
 
-Task specs live in `docs/task-*.md`. The execution plan is in `docs/EXECUTION_PLAN.md`.
+Task specs and execution plan live in `.ralph/specs/` (local only, never committed).
 
 **Autonomous execution** uses the Ralph QA loop (`.ralph/loop.sh`):
 ```bash
@@ -114,7 +114,7 @@ Task specs live in `docs/task-*.md`. The execution plan is in `docs/EXECUTION_PL
 **Local-only files (never committed):**
 - `.claude/settings.local.json` — user-specific tool permissions
 - `.ralph/` — QA loop, specs, prompts, and execution state
-- `docs/` — task specs and execution plan (except `docs/CHANGELOG.md` with explicit user request)
+- `docs/CHANGELOG.md` — may be committed only when the user explicitly requests it
 
 ## Skills
 
@@ -133,6 +133,6 @@ Git Flow model with `master` (production) and `develop` (integration) branches. 
 - NEVER force push to `master` or `develop`
 - NEVER commit directly on `develop` — all work in feature/fix branches
 - Each task = one PR, strict sequential execution order
-- NEVER commit `docs/` files — task specs and execution plan are local reference only, not tracked in git. The only exception is `docs/CHANGELOG.md`, which may be committed when the user explicitly requests it
+- NEVER commit `docs/` files except `docs/CHANGELOG.md` with explicit user request
 - NEVER commit `.ralph/` files — the Ralph QA loop, specs, prompts, and state are all local-only tooling, never tracked in git
 - NEVER install global dependencies via brew, apt, or any system package manager — all tools must be pre-installed by the user

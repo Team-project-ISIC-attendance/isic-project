@@ -70,15 +70,15 @@ pio run -t upload          # Flash to device
 
 ## Development
 
-This project uses Claude Code with a skill-based automation harness for execution. Key skills:
+This project uses Claude Code with a Ralph QA loop for autonomous execution:
 
-- `/go` -- Resume execution from where you left off
-- `/phase-start N` -- Execute all tasks in phase N
-- `/verify-task ID` -- Verify a task's acceptance criteria
-- `/frontend-dev` -- Start frontend dev server with browser debugging
-- `/backend-dev` -- Start backend with Docker Compose
+```bash
+.ralph/loop.sh all            # Run all specs sequentially
+.ralph/loop.sh phase 1        # Run all phase 1 specs
+.ralph/loop.sh build 1.1      # Build a single spec
+```
 
-Task specs are in `docs/task-*.md` (local only). The execution plan is in `docs/EXECUTION_PLAN.md`.
+Interactive skills: `/backend-dev`, `/frontend-dev`, `/security-scan`, `/git-workflow`
 
 ## Git Workflow
 
