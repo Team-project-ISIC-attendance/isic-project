@@ -1,9 +1,12 @@
 [submodule "backend"]
 	path = backend
-	url = https://github.com/Dillir/isic-project-backend
+	url = https://github.com/Team-project-ISIC-attendance/isic-project-backend.git
 [submodule "frontend"]
 	path = frontend
-	url = https://github.com/Dillir/isic-project-frontend
+	url = https://github.com/Team-project-ISIC-attendance/isic-project-frontend.git
 [submodule "hardware"]
 	path = hardware
-	url = https://github.com/Dillir/isic-project-hardware
+	url = https://github.com/Team-project-ISIC-attendance/isic-project-hardware.git
+[submodule "documentation"]
+	path = documentation
+	url = https://github.com/Team-project-ISIC-attendance/isic-project-documentation.git
