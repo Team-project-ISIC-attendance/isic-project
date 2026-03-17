@@ -30,5 +30,11 @@
   },
   "browser": {
     "tool": "chrome-devtools"
+  },
+  "design": {
+    "tool": "figma",
+    "figmaUrl": "https://www.figma.com/design/wYwJVRnlPhF9uplIawpl0i/ISIC-Attendance--Copy-?node-id=616-41377&t=mYni0sAk4toIPrXX-1",
+    "verifyVisual": true,
+    "note": "All frontend tasks with visual components must be verified against the Figma design for 1:1 match using get_design_context and get_screenshot"
   }
 }
