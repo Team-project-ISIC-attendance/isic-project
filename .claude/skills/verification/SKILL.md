@@ -24,6 +24,12 @@ uv run ruff check --fix . && uv run mypy . && uv run pytest
 
 **Note:** `uv run pytest` requires Docker to be running (Mosquitto MQTT broker via testcontainers).
 
+### Common mypy strict-mode fixes
+
+- `Unused "type: ignore" comment`: a mypy override in `pyproject.toml` already handles the import; remove the inline comment
+- `dict` return type: use `dict[str, object]` not bare `dict`
+- Reusing `result` for different SQLAlchemy selects: use distinct variable names to avoid type inference confusion
+
 ## Frontend (cd frontend)
 
 ```bash
