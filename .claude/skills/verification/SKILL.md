@@ -17,6 +17,11 @@ uv run pytest                    # Tests (requires Docker for MQTT testcontainer
 
 Run in this order. If any check fails, fix the issue and re-run ALL checks from the beginning.
 
+One-liner to run all three sequentially (stops on first failure):
+```bash
+uv run ruff check --fix . && uv run mypy . && uv run pytest
+```
+
 **Note:** `uv run pytest` requires Docker to be running (Mosquitto MQTT broker via testcontainers).
 
 ## Frontend (cd frontend)
