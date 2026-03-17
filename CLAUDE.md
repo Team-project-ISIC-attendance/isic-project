@@ -98,8 +98,13 @@ Task specs live in `docs/task-*.md`. The execution plan is in `docs/EXECUTION_PL
 - `/audit-claude-md` — Audit this file for attention zone optimization
 - `/audit-skills` — Audit all skills against best practices
 
-**State tracking:** `.claude/phase-state.json` tracks progress across phases.
+**State tracking:** `.claude/phase-state.json` tracks progress across phases (local only, never committed).
 **Verification config:** `.claude/verification-config.json` has test/lint/build commands.
+
+**Local-only files (never committed):**
+- `.claude/phase-state.json` — execution progress, changes every session
+- `.claude/settings.local.json` — user-specific tool permissions
+- `docs/` — task specs and execution plan (except `docs/CHANGELOG.md` with explicit user request)
 
 ## Skills
 
