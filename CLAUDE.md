@@ -81,6 +81,9 @@ Event-driven architecture built on a custom Signal/Slot EventBus:
 ### Frontend (TypeScript)
 - Strict TypeScript (`noUnusedLocals`, `noUnusedParameters`)
 - ESLint 9 flat config with React Hooks and React Refresh plugins
+- **shadcn/ui** as the component library — customize styling to match Figma design exactly
+- Responsive/adaptive layout — UI must work on desktop and tablet viewports
+- Tailwind CSS with Figma design tokens for colors, fonts, spacing
 
 ### Hardware (C++)
 - C++17 standard (gnu++2a build flag)
