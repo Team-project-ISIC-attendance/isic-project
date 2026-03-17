@@ -93,20 +93,27 @@ Event-driven architecture built on a custom Signal/Slot EventBus:
 
 Task specs live in `docs/task-*.md`. The execution plan is in `docs/EXECUTION_PLAN.md`.
 
-**Key skills:**
-- `/go` — Resume execution from where you left off (start of any session)
-- `/phase-start N` — Execute all tasks in phase N autonomously
-- `/verify-task ID` — Verify a task's acceptance criteria after implementation
+**Autonomous execution** uses the Ralph QA loop (`.ralph/loop.sh`):
+```bash
+.ralph/pre-check.sh          # Verify environment
+.ralph/loop.sh plan 1.1      # Plan spec 1.1
+.ralph/loop.sh build 1.1     # Build spec 1.1 (loops until all criteria pass)
+.ralph/loop.sh phase 1       # Run all phase 1 specs
+.ralph/loop.sh all            # Run all 12 specs sequentially
+```
+
+**Interactive skills:**
 - `/security-scan` — Run dependency audit, secrets detection, static analysis
 - `/audit-claude-md` — Audit this file for attention zone optimization
 - `/audit-skills` — Audit all skills against best practices
+- `/backend-dev` — Start backend dev server with Docker Compose
+- `/frontend-dev` — Start frontend dev server with browser debugging
 
-**State tracking:** `.claude/phase-state.json` tracks progress across phases (local only, never committed).
 **Verification config:** `.claude/verification-config.json` has test/lint/build commands.
 
 **Local-only files (never committed):**
-- `.claude/phase-state.json` — execution progress, changes every session
 - `.claude/settings.local.json` — user-specific tool permissions
+- `.ralph/` — QA loop, specs, prompts, and execution state
 - `docs/` — task specs and execution plan (except `docs/CHANGELOG.md` with explicit user request)
 
 ## Skills
