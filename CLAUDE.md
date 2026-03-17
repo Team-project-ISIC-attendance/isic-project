@@ -127,3 +127,5 @@ Git Flow model with `master` (production) and `develop` (integration) branches. 
 - NEVER commit directly on `develop` — all work in feature/fix branches
 - Each task = one PR, strict sequential execution order
 - NEVER commit `docs/` files — task specs and execution plan are local reference only, not tracked in git. The only exception is `docs/CHANGELOG.md`, which may be committed when the user explicitly requests it
+- NEVER commit `.ralph/` files — the Ralph QA loop, specs, prompts, and state are all local-only tooling, never tracked in git
+- NEVER install global dependencies via brew, apt, or any system package manager — all tools must be pre-installed by the user
