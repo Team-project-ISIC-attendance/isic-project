@@ -1,0 +1,40 @@
+{
+  "backend": {
+    "directory": "backend",
+    "commands": {
+      "test": "uv run pytest",
+      "lint": "uv run ruff check .",
+      "lint-fix": "uv run ruff check --fix .",
+      "typecheck": "uv run mypy .",
+      "build": "docker-compose up --build -d"
+    },
+    "devServer": {
+      "command": "docker-compose up",
+      "url": "http://localhost:8000",
+      "healthCheck": "http://localhost:8000/health",
+      "startupSeconds": 15
+    }
+  },
+  "frontend": {
+    "directory": "frontend",
+    "commands": {
+      "lint": "npm run lint",
+      "build": "npm run build",
+      "dev": "npm run dev"
+    },
+    "devServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:5173",
+      "startupSeconds": 10
+    }
+  },
+  "browser": {
+    "tool": "chrome-devtools"
+  },
+  "design": {
+    "tool": "figma",
+    "figmaUrl": "https://www.figma.com/design/wYwJVRnlPhF9uplIawpl0i/ISIC-Attendance--Copy-?node-id=616-41377&t=mYni0sAk4toIPrXX-1",
+    "verifyVisual": true,
+    "note": "All frontend tasks with visual components must be verified against the Figma design for 1:1 match using get_design_context and get_screenshot"
+  }
+}
