@@ -41,18 +41,32 @@ git clone --recurse-submodules https://github.com/Team-project-ISIC-attendance/i
 cd isic-project
 ```
 
+### Full stack with Docker
+
+```bash
+docker compose up --build
+```
+
+This starts the nginx-served frontend, FastAPI backend, and MQTT broker:
+
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- Backend API: [http://localhost:8000](http://localhost:8000)
+- API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+- MQTT: `localhost:1883`
+
+The frontend image serves the production build through nginx and proxies
+`/api/*` requests to the backend container.
+
 ### Backend
 
 ```bash
 cd backend
 uv sync
 alembic upgrade head
-docker-compose up          # Starts backend + MQTT broker (ports 8000, 1883)
+HTTP_HOST=0.0.0.0 HTTP_PORT=8000 uv run python -m src.main
 ```
 
-API docs available at [http://localhost:8000/docs](http://localhost:8000/docs)
-
-### Frontend
+### Frontend Dev Server
 
 ```bash
 cd frontend
