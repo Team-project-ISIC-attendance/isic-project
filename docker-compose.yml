@@ -3,7 +3,7 @@ services:
     build:
       context: ./backend
     ports:
-      - "8000:8000"
+      - "8023:8000"
     environment:
       DATABASE_URL: sqlite+aiosqlite:////app/data/database.db
       MQTT_BROKER_HOST: mqtt
@@ -11,7 +11,7 @@ services:
       MQTT_TOPIC: device/+/#
       MQTT_CLIENT_ID: isic-backend
       HTTP_HOST: 0.0.0.0
-      HTTP_PORT: "8000"
+      HTTP_PORT: "8023"
       JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-me-in-production}
       JWT_EXPIRY_HOURS: "24"
       CORS_ORIGINS: "*"
@@ -26,7 +26,7 @@ services:
         condition: service_started
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:8023/health"]
       interval: 30s
       timeout: 10s
       retries: 3
