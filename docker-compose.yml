@@ -1,0 +1,57 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite+aiosqlite:////app/data/database.db
+      MQTT_BROKER_HOST: mqtt
+      MQTT_BROKER_PORT: "1883"
+      MQTT_TOPIC: device/+/#
+      MQTT_CLIENT_ID: isic-backend
+      HTTP_HOST: 0.0.0.0
+      HTTP_PORT: "8000"
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-me-in-production}
+      JWT_EXPIRY_HOURS: "24"
+      CORS_ORIGINS: "*"
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@stuba.sk}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-change-me-in-production}
+      SCAN_WINDOW_BEFORE_MINUTES: "15"
+      SCAN_WINDOW_AFTER_MINUTES: "5"
+    volumes:
+      - ./backend/data:/app/data
+    depends_on:
+      mqtt:
+        condition: service_started
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  mqtt:
+    image: eclipse-mosquitto:2.0
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./backend/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    restart: unless-stopped
