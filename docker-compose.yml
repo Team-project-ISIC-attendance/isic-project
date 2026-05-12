@@ -19,6 +19,8 @@ services:
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-change-me-in-production}
       SCAN_WINDOW_BEFORE_MINUTES: "15"
       SCAN_WINDOW_AFTER_MINUTES: "5"
+      SCHEDULE_TIME_ZONE: "Europe/Bratislava"
+      LOG_TIME_ZONE: "Europe/Bratislava"
     volumes:
       - ./backend/data:/app/data
     depends_on:
