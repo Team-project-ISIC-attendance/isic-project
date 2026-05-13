@@ -54,10 +54,7 @@ services:
 
   mqtt:
     image: eclipse-mosquitto:2.0
-    entrypoint: ["/bin/sh", "-c"]
-    command: >-
-      mosquitto_passwd -b -c /mosquitto/config/passwd $$MQTT_USERNAME $$MQTT_PASSWORD &&
-      exec mosquitto -c /mosquitto/config/mosquitto.conf
+    entrypoint: ["/bin/sh", "/mqtt-entrypoint.sh"]
     environment:
       MQTT_USERNAME: ${MQTT_USERNAME:-isic}
       MQTT_PASSWORD: ${MQTT_PASSWORD:-change-me-in-production}
@@ -65,4 +62,5 @@ services:
       - "1883:1883"
     volumes:
       - ./backend/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./backend/mqtt-entrypoint.sh:/mqtt-entrypoint.sh:ro
     restart: unless-stopped
