@@ -177,7 +177,7 @@
                         </a>
                     </li>
                     <li>
-                        <strong>Stretnutia:</strong> Každý pondelok, 17:00, miestnosť A514
+                        <strong>Stretnutia:</strong> T1–T13: pondelok 17:00; T14+: utorok 10:00, miestnosť A514
                     </li>
                     <li>
                         <strong>Dokumentácia hardvéru:</strong> PN532 NFC Reader, ESP12-F
@@ -316,14 +316,14 @@
                         <div class="milestone-marker"></div>
                         <div class="milestone-number">9</div>
                         <div class="milestone-content">
-                            <div class="milestone-title">Testovanie a metriky</div>
-                            <div class="milestone-date">Do konca januára 2026</div>
+                            <div class="milestone-title">Multi-user systém a admin panel</div>
+                            <div class="milestone-date">Týždeň 14-15 (Január - Február 2026)</div>
                             <div class="milestone-description">
-                                Komplexné testovanie existujúceho systému. Zber metrík výkonu:
-                                latencia čítania kariet, spoľahlivosť MQTT komunikácie, odozva API.
-                                Identifikácia slabých miest pre optimalizáciu.
+                                Rozšírenie systému o role-based prístup (admin, učiteľ). Implementovaný
+                                admin panel vo FE, HW konzola v BE a FE, nový JSON config formát pre HW
+                                so zníženou latenciou skenov (~40 %) a MQTT panel interakcia.
                             </div>
-                            <span class="milestone-status status-in-progress">⟳ Prebieha</span>
+                            <span class="milestone-status status-completed">✓ Dokončené</span>
                         </div>
                     </div>
 
@@ -331,16 +331,45 @@
                         <div class="milestone-marker"></div>
                         <div class="milestone-number">10</div>
                         <div class="milestone-content">
-                            <div class="milestone-title">Optimalizácia hardvéru a vylepšenie dizajnu a UX</div>
-                            <div class="milestone-date">Február - Marec 2026</div>
+                            <div class="milestone-title">HW monitoring a prechod na ESP32</div>
+                            <div class="milestone-date">Týždeň 16-17 (Február - Marec 2026)</div>
                             <div class="milestone-description">
-                                Optimalizácia spotreby energie hardvéru pre dlhšiu výdrž batérie.
-                                Implementácia sleep režimov, efektívnejšie power management
-                                a testovanie rôznych napájacích scenárov. Prepracovanie používateľského 
-                                rozhrania na základe spätnej väzby. Zlepšenie UX tokov, vizuálny redesign,
-                                optimalizácia pre mobilné zariadenia a implementácia accessibility štandardov.
+                                Implementovaný MQTT status topic pre online/offline monitoring zariadení
+                                v BE a FE. Globálne testovanie odhalilo limitáciu ESP12-F pre WPA2 eduroam —
+                                systém migrovaný na ESP32. Opravené bugy v BE (kolízia skenov), FE (pridanie
+                                študenta, skratky) a kritický PN532 lib segfault v HW.
                             </div>
-                            <span class="milestone-status status-planned">○ Plánované</span>
+                            <span class="milestone-status status-completed">✓ Dokončené</span>
+                        </div>
+                    </div>
+
+                    <div class="milestone">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-number">11</div>
+                        <div class="milestone-content">
+                            <div class="milestone-title">Produkčné nasadenie na server STU</div>
+                            <div class="milestone-date">Týždeň 18-19 (Marec 2026)</div>
+                            <div class="milestone-description">
+                                Celý systém nasadený na server STU — BE, FE aj ESP32 zariadenia fungujú
+                                v produkčnom prostredí end-to-end. Opravené OTA aktualizácie (lokálne
+                                riešenie namiesto verejného API) a HW retry logika pri nestabilnom WiFi.
+                            </div>
+                            <span class="milestone-status status-completed">✓ Dokončené</span>
+                        </div>
+                    </div>
+
+                    <div class="milestone">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-number">12</div>
+                        <div class="milestone-content">
+                            <div class="milestone-title">Finálna dokumentácia a prezentácia</div>
+                            <div class="milestone-date">Týždeň 20-21 (Apríl - Máj 2026)</div>
+                            <div class="milestone-description">
+                                Dokončená kompletná PDF dokumentácia projektu (BE, HW, FE sekcie).
+                                Úspešná finálna prezentácia 20.05.2026 — predvedené live skenovanie
+                                ISIC kariet, OTA aktualizácia a celý end-to-end flow v produkčnom prostredí STU.
+                            </div>
+                            <span class="milestone-status status-completed">✓ Dokončené</span>
                         </div>
                     </div>
                 </div>
